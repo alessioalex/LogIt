@@ -1,0 +1,5 @@
+# LogIt
+
+# TODO:
+
+Write tests
