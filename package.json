@@ -5,6 +5,11 @@
     "homepage"    : "http://github.com/alessioalex/LogIt",
     "author"      : "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
     "main"        : "./index.js",
+    "keywords"    : ["log", "logging", "debug", "trace", "stacktrace"],
+    "repository": {
+      "type" : "git",
+      "url"  : "https://github.com/alessioalex/LogIt.git"
+    },
     "engines"     : {
       "node": ">=0.6.x"
     },
