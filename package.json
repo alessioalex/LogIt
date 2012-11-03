@@ -1,0 +1,24 @@
+{
+    "name"        : "logit",
+    "description" : "Log everything, everywhere",
+    "version"     : "0.0.1",
+    "homepage"    : "http://github.com/alessioalex/LogIt",
+    "author"      : "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
+    "main"        : "./index.js",
+    "engines"     : {
+      "node": ">=0.6.x"
+    },
+    "dependencies": {
+      "Cls"             : "*",
+      "colors"          : "*",
+      "debug"           : "0.7.x",
+      "moment"          : "1.6.x",
+      "underscore"      : "*",
+      "redis"           : "*"
+    },
+    "devDependencies": {
+      "mocha"   : "1.1.x",
+      "should"  : "0.6.x"
+    }
+}
+
