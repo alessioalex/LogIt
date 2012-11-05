@@ -1,7 +1,7 @@
 {
     "name"        : "logit",
     "description" : "Log everything, everywhere",
-    "version"     : "0.0.2",
+    "version"     : "0.0.3",
     "homepage"    : "http://github.com/alessioalex/LogIt",
     "author"      : "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
     "main"        : "./index.js",
