@@ -1,7 +1,7 @@
 {
     "name"        : "logit",
     "description" : "Log everything, everywhere",
-    "version"     : "0.0.3",
+    "version"     : "0.1.0",
     "homepage"    : "http://github.com/alessioalex/LogIt",
     "author"      : "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
     "main"        : "./index.js",
@@ -23,8 +23,10 @@
       "mongodb"         : "1.1.x"
     },
     "devDependencies": {
-      "mocha"   : "1.1.x",
+      "mocha"   : "1.7.x",
       "should"  : "0.6.x"
+    },
+    "scripts": {
+      "test": "./node_modules/.bin/mocha --slow 2000 --timeout 10s --reporter spec --require should test/logit.js test/MongoStore.js test/FileStore.js"
     }
 }
-
