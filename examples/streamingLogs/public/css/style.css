@@ -1,0 +1,29 @@
+#tree ul ul {
+    display: none;
+}
+#tree ul {
+    display: block;
+    margin-left: 12px;
+    margin-right: 0;
+    list-style: none outside none;
+    margin-bottom: 0;
+    padding: 0
+}
+#tree .branchRoot {
+    padding-left: 15px;
+}
+#tree .branchRoot:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#tree li.branch {
+    background: url('../imgs/open.png') no-repeat 0 5px;
+}
+#tree li.opened {
+    background: url('../imgs/close.png') no-repeat 0 5px;
+    margin-bottom: 4px;
+}
+li {
+    display: block;
+    padding-left: 5px;
+}

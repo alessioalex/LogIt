@@ -1,0 +1,12 @@
+{
+  "name": "streamingLogs",
+    "description": "Streaming logs to the browser using server Side Events (SSE)",
+    "version": "0.0.1",
+    "author": "Alexandru Vladutu",
+    "dependencies": {
+      "connect" : "2.6.x",
+      "logit"   : "0.1.x",
+      "debug"   : "*"
+    },
+    "keywords": ["streaming", "logs", "logit"]
+}
