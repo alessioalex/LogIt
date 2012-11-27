@@ -36,9 +36,11 @@ log.info(loggingData[, errorObj]);
 log.warn(loggingData[, errorObj]);
 log.error(loggingData[, errorObj]);
 ```
-  `loggingData` can be either:
+
+  loggingData can be either:
 
   a) {String} containing the message to log
+
   b) {Object} with logging settings (the message is mandatory, the rest of the settings are optional):
   - details {Object}   = Put whatever you want here
   - msg {String}       = Log message
