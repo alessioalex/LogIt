@@ -93,7 +93,7 @@ log.info({ msg: 'login', details: user });
 
 ```js
 var LogIt = require('logit'),
-    log = LogIt({ store: new log.stores.file('/tmp/it.log') });
+    log   = LogIt({ store: new log.stores.file('/tmp/it.log') });
 
 // ... somewhere deep in your code
 
@@ -147,7 +147,7 @@ log.error({
 
 ### Streaming logs - log.stream(options)
 
-  Stream the logs if the store supports it.
+  Stream the logs if the store supports it. If the streaming doesn't happen in realtime you will need to provide an `interval` option for polling.
 
 ```js
 // Note: you can log messages on your server and setup the stream elsewhere
@@ -172,6 +172,70 @@ log.stream({ interval: 1000 }).on('data', function(data) {
     lastKnownRss = currentRss;
   }
 });
+```
+
+### Increase stacktrace limit
+
+```js
+var logit = require('logit');
+
+// if you want to find out more details about where the error 'came from'
+LogIt.setErrorStackLimit(25);
+```
+
+### Stores
+
+  LogIt supports 3 types of stores by default: console, file & MongoDB. Every store must implement the following methods: `write`, `clear` and `stream` (optional).
+
+#### Console - constructor([collorsObj, separator])
+
+  This store will log to the console using the following colors by default:
+
+```js
+error   : 'red',
+warn    : 'red',
+info    : 'green',
+debug   : 'yellow',
+default : 'white'
+```
+
+  Messages will be separated using `=========================` by default.
+
+  If you want to change the colors/separator you can achieve that by passing those opts to the constructor:
+
+```js
+var LogIt = require('logit'),
+    log   = LogIt({
+      store: new log.stores.console({
+        error   : 'red',
+        warn    : 'cyan',
+        info    : 'blue',
+        debug   : 'yellow',
+        default : 'gray'
+      }, '-- SEPARATOR --')
+    });
+
+log.info('hello');
+```
+
+### File - constructor(filePath)
+
+```js
+var LogIt = require('logit'),
+    log = LogIt({ store: new log.stores.file(__dirname + '/out.log') });
+
+log.info('test');
+```
+
+### MongoDB - constructor(opts, callback)
+
+`opts` can have the following props: host, user, port, pass, database, collection.
+
+```js
+var LogIt = require('logit'),
+    log = LogIt({ store: new log.stores.mongo() });
+
+log.info('test');
 ```
 
 ### More
