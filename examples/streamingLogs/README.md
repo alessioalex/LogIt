@@ -1,4 +1,4 @@
-![print screen](https://raw.github.com/alessioalex/LogIt/master/examples/streaminLogs/files/streamingLogs.png)
+![print screen](https://raw.github.com/alessioalex/LogIt/master/examples/streamingLogs/files/streamingLogs.png)
 
 ## Description
 
