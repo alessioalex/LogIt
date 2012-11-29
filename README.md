@@ -44,7 +44,7 @@ log.error(loggingData[, errorObj]);
   b) {Object} with logging settings (the message is mandatory, the rest of the settings are optional):
   - details {Object}   = Put whatever you want here
   - msg {String}       = Log message
-  - stack {Boolean}    = If the call stack should be logged or not (will log the following props: ['stack', 'method', 'path', 'line', 'pos', 'file']). By default this option is enabled for the `debug` and `error` levels.
+  - stack {Boolean}    = If the call stack should be logged or not (will log the following props: ['stack', 'method', 'path', 'line', 'pos', 'file']). By default this option is enabled for the `debug` and `error` levels, but if you pass in false the stack won't be logged for those levels either.
   - errStack {Boolean} = Similar to the above, use this if you also want the stacktrace of the error also. The stack props will be logged to the `errorData` property. By default it's disabled for all logging levels.
 
   `errorObj` contains the error you want to log. By default only the message will be logged to the `errorData`. If you want the stacktrace of the error to be also logged, look at the `errStack` property above.

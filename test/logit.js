@@ -127,7 +127,7 @@ describe('LogIt', function() {
 
         store = {
           write: function(obj) {
-            var fields = ['stack', 'msg', 'method', 'path', 'line', 'pos', 'file']
+            var fields = ['stack', 'msg', 'method', 'path', 'line', 'pos', 'file'];
 
             fields.forEach(function(field) {
               obj.should.have.property(field);
@@ -161,6 +161,32 @@ describe('LogIt', function() {
             msg   : 'something happened'
           });
         }).should.throw();
+      });
+
+      it("should not write the stack if stack === false", function() {
+        var store, log, done;
+
+        done = 0;
+
+        store = {
+          write: function(obj) {
+            var fields = ['stack', 'method', 'path', 'line', 'pos', 'file'];
+
+            fields.forEach(function(field) {
+              obj.should.not.have.property(field);
+            });
+            done += 1;
+          },
+          clear: function() {}
+        };
+
+        // by default 'debug' and 'error' require the stack automatically
+        log = new LogIt({ store: store });
+        log.write('error', {
+          msg   : 'something happened',
+          stack : false
+        });
+        done.should.eql(1);
       });
     });
 

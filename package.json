@@ -1,7 +1,7 @@
 {
     "name"        : "logit",
     "description" : "Log everything, everywhere",
-    "version"     : "0.1.0",
+    "version"     : "0.1.1",
     "homepage"    : "http://github.com/alessioalex/LogIt",
     "author"      : "Alexandru Vladutu <alexandru.vladutu@gmail.com>",
     "main"        : "./index.js",
@@ -19,7 +19,6 @@
       "debug"           : "0.7.x",
       "moment"          : "1.6.x",
       "underscore"      : "*",
-      "redis"           : "0.8.x",
       "mongodb"         : "1.1.x"
     },
     "devDependencies": {
