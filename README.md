@@ -53,7 +53,7 @@ log.error(loggingData[, errorObj]);
 
 ```js
 var LogIt = require('logit'),
-    log   = LogIt({ store: new log.stores.file('/tmp/it.log') });
+    log   = new LogIt({ store: new LogIt.stores.file('/tmp/it.log') });
 
 log.info('Server started on port 8080');
 // same as: log.write('info', 'Server started on port 8080');
@@ -66,9 +66,9 @@ log.write('memoryUsage', process.memoryUsage().rss);
 
 ```js
 var LogIt = require('logit'),
-    log   = LogIt({ store: new log.stores.file('/tmp/it.log') }),
+    log   = new LogIt({ store: new LogIt.stores.file('/tmp/it.log') }),
     // creating logit instance with custom levels
-    log2  = LogIt({ levels: ['panic', 'forFun'] }, { store: new log.stores.file('/tmp/it2.log') });
+    log2  = new LogIt({ levels: ['panic', 'forFun'] }, { store: new LogIt.stores.file('/tmp/it2.log') });
 
 log.warn('there is a memory spike happening now');
 log.error('something bad happened while saving to db', new Error('dbfail'));
@@ -81,7 +81,7 @@ log2.forFun('tic');
 
 ```js
 var LogIt = require('logit'),
-    log = LogIt({ store: new log.stores.file('/tmp/it.log') });
+    log = new LogIt({ store: new LogIt.stores.file('/tmp/it.log') });
 
 var user = { id: '14421', name: 'John Doe', username: 'johndoe' };
 
@@ -93,7 +93,7 @@ log.info({ msg: 'login', details: user });
 
 ```js
 var LogIt = require('logit'),
-    log   = LogIt({ store: new log.stores.file('/tmp/it.log') });
+    log   = new LogIt({ store: new LogIt.stores.file('/tmp/it.log') });
 
 // ... somewhere deep in your code
 
@@ -205,8 +205,8 @@ default : 'white'
 
 ```js
 var LogIt = require('logit'),
-    log   = LogIt({
-      store: new log.stores.console({
+    log   = new LogIt({
+      store: new LogIt.stores.console({
         error   : 'red',
         warn    : 'cyan',
         info    : 'blue',
@@ -222,7 +222,7 @@ log.info('hello');
 
 ```js
 var LogIt = require('logit'),
-    log = LogIt({ store: new log.stores.file(__dirname + '/out.log') });
+    log = new LogIt({ store: new LogIt.stores.file(__dirname + '/out.log') });
 
 log.info('test');
 ```
@@ -233,7 +233,7 @@ log.info('test');
 
 ```js
 var LogIt = require('logit'),
-    log = LogIt({ store: new log.stores.mongo() });
+    log = new LogIt({ store: new LogIt.stores.mongo() });
 
 log.info('test');
 ```
